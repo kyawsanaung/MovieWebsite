@@ -1,0 +1,430 @@
+/* ===== Reset & Base Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ===== Infobar ===== */
+.infobar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0396df;
+  font-size: small;
+}
+
+.infobar .logo {
+  margin-left: 10px;
+  max-width: 30%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #eeeeff;
+}
+
+.info-links {
+  list-style: none;
+  display: flex;
+  justify-content: right;
+  padding: 3px 20px;
+}
+
+.info-links li a {
+  color: #ffffff;
+  margin-left: 20px;
+  padding-right: 20px;
+  font-size: small;
+  text-decoration: none;
+  display: block;
+  border-right: 1px solid #0d0f13;
+}
+
+.info-links li:last-child a {
+  border-right: none;
+}
+
+.info-links a:hover {
+  color: #d7ddec;
+}
+
+
+
+/* ===== Navbar ===== */
+.navbar {
+  z-index: 1;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(30deg, #1059d7, #900c3f);
+  position: relative;
+  border-bottom: 0.5px solid #545050;
+}
+
+.navbar .logo {
+  width: 20%;
+}
+
+.navbar .logo img {
+  height: 80px;
+  width: 210px;
+  margin-left: 20px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  width: 40%;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  color: #eeeeff;
+  text-decoration: none;
+  margin-right: 10px;
+  padding: 0 2px 6px;
+  display: block;
+}
+
+.nav-links a:hover {
+  border-bottom: 2px solid #eeeeff;
+  padding-bottom: 4px;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle i {
+  color: #ffffff;
+}
+
+.menu-toggle:hover i {
+  color: #5c5b5b;
+}
+
+/* ===== Icons and Search ===== */
+.navbar .icons {
+  width: 30%;
+  display: flex;
+  gap: 1rem;
+}
+
+.icon {
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  padding: 7px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon i {
+  color: #ffffff;
+}
+
+.icon:hover {
+  background-color: #ffffff;
+}
+
+.icon:hover i {
+  color: #2e2e2e;
+}
+
+.search_box {
+  background-color: white;
+  max-width: 150px;
+  padding: 5px;
+  border-radius: 25px;
+  margin-top: 3px;
+}
+
+.search_box:hover,
+.search_box:hover .row {
+  background-color: #f1eaea;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.bsearch {
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 6px;
+  margin: 0;
+}
+
+.bsearch:hover {
+  background-color: #6188f5;
+}
+
+.bsearch:hover i {
+  color: #ffffff;
+}
+
+.search {
+  background-color: transparent;
+  border: none;
+  outline: 0;
+  max-width: 100px;
+  margin-left: 3px;
+}
+
+/* ===== Ticket Button ===== */
+.ticket_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 40px;
+  padding: 3px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ec2525;
+  color: #eeeeff;
+  cursor: pointer;
+}
+
+.ticket_icon:hover {
+  background-color: #c70039;
+}
+
+.ticket_icon:active {
+  transform: translateY(1px);
+}
+
+/* ===== Footer ===== */
+.footerbody {
+  width: 100%;
+  background: linear-gradient(135deg, #1059d7, #900c3f);
+  padding: 50px 100px;
+  position: relative;
+}
+
+.cineplanet_footer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  align-items: start;
+}
+
+.container {
+  list-style: none;
+}
+
+.container h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.container li {
+  margin-bottom: 10px;
+}
+
+.container a {
+  text-decoration: none;
+  color: #f1f1f1;
+  transition: color 0.3s ease;
+}
+
+.container a:hover {
+  color: #ffd700;
+}
+
+.container nav a {
+  margin-right: 15px;
+  font-size: 20px;
+  color: #f1f1f1;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.container nav a:hover {
+  color: #ffd700;
+  transform: scale(1.2);
+}
+
+.logo_footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.logo_footer img {
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.footer_description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.footer_description h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.footer_description p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+
+.authenticity_footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+  color: #f1f1f1;
+}
+
+.copy_right p {
+  font-size: 13px;
+  color: #aaa;
+}
+
+/* ===== Social Icons ===== */
+.social_nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+/* ===== Accordion (Mobile) ===== */
+.accordion-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  color: white;
+}
+
+.toggle-icon {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+  display: none;
+}
+
+.accordion-content {
+  list-style: none;
+  padding: 0;
+  display: none;
+}
+
+.accordion-content.show {
+  display: block;
+}
+
+.accordion-content li {
+  margin-bottom: 10px;
+}
+
+/* ===== Responsive Styles ===== */
+@media (max-width: 960px) {
+  .nav-links {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 100%;
+    background-color: #473bec;
+    display: none;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .nav-links li:hover {
+    background-color: #0396df;
+  }
+
+  .nav-links a:hover {
+    border: none;
+    padding-bottom: 6px;
+  }
+
+  .navbar {
+    justify-content: flex-start;
+  }
+
+  .navbar .icons {
+    right: 50px;
+    position: absolute;
+  }
+
+  .menu-toggle {
+    display: flex;
+    position: absolute;
+    left: 15px;
+  }
+
+  .search_box {
+    display: none;
+  }
+
+
+  .toggle-icon {
+    display: block;
+  }
+
+  .accordion-toggle.open .toggle-icon {
+    transform: rotate(45deg);
+  }
+
+  .logo_footer {
+    text-align: center;
+  }
+}
+
+@media (min-width: 769px) {
+  .accordion-content {
+    display: block !important;
+  }
+
+  .accordion-toggle {
+    pointer-events: none;
+  }
+
+  .toggle-icon {
+    display: none;
+  }
+}
