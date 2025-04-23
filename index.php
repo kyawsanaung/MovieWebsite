@@ -8,7 +8,5 @@
     <title>Movie Website</title>
 </head>
 <body>
-    
-</body>
-</html>
+
 <?php include("partial/footer.php"); ?>

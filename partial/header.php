@@ -16,13 +16,13 @@
     <ul class="info-links">
       <li><a href="#">Help</a></li>
       <li><a href="#">gift cards</a></li>
-      <li><a href="#">Find a Store</a></li>
+      <li><a href="#">Find a Theater</a></li>
     </ul>
   </nav>
   <nav class="navbar">
 
     <div class="menu-toggle" id="mobile-menu">
-    <i class="fa fa-bars fa-2x"></i>
+    <i class="fa-solid fa-ellipsis-vertical fa-2x"></i>
     </div>
 
     <div class="logo"><img src="images/NavLogo.png" alt="Logo"></div>
@@ -47,7 +47,7 @@
             </div> 
             
 
-            <button class="icon" onclick="window.location.href='Register.php';"><i class="fa-regular fa-user fa-2x"></i>
+            <button class="icon" onclick="window.location.href='signup.php';"><i class="fa-regular fa-user fa-2x"></i>
             </button>  
   </div>
 

@@ -72,7 +72,7 @@ body {
 
 .navbar .logo img {
   height: 80px;
-  width: 210px;
+  width: 170px;
   margin-left: 20px;
 }
 
@@ -413,6 +413,10 @@ body {
   .logo_footer {
     text-align: center;
   }
+
+  .login_message_container{
+    display: none;
+  }
 }
 
 @media (min-width: 769px) {
@@ -427,4 +431,134 @@ body {
   .toggle-icon {
     display: none;
   }
+
+}
+
+/* Login page css  */
+
+.login_container{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: 10%;
+  padding: 30px;
+  background-color: rgba(179, 170, 170, 0.1); /* Semi-transparent background for the blur effect */
+  backdrop-filter: blur(4px);  /* Applies the blur effect */
+  display: block;
+  width: 400px;
+  border-radius: 20px;
+  height: fit-content;
+}
+
+
+
+
+
+
+.login_form{
+  display: block;
+}
+.login_input {
+  width: 300px;
+  height: 45px;
+  border-radius: 10px;
+  border: none;
+  padding: 0px 10px;
+  margin: 20px;
+  color: black;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: box-shadow 0.3s ease;
+}
+
+.login_input::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.login_input:focus{
+    outline: none;
+    box-shadow: none;
+    animation: neonPulse 1.5s ease-in-out infinite;
+}
+@keyframes neonPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 5px #ff4da6,
+      0 0 10px #ff4da6,
+      0 0 20px #ff4da6,
+      0 0 40px #ff4da6;
+  }
+  50% {
+    box-shadow:
+      0 0 2px #ff4da6,
+      0 0 4px #ff4da6,
+      0 0 8px #ff4da6,
+      0 0 16px #ff4da6;
+  }
+}
+
+
+.action_center .login_input{
+  width: 300px;
+  height: 45px;
+  border-radius: 10px;
+  border: none;
+  margin: 20px;
+  background-color: #900c3f;
+  color: white;
+}
+
+.action_center .login_input:hover{
+  background-color: #ba255e;
+  color: white;
+}
+
+.action_center .login_input:focus{
+  transform: translateY(0.5px);
+  background-color: #ba255e;
+  color: white;
+}
+
+.forgot_pwd_link{
+  text-align: right;
+  margin-right:  20px;
+  margin-bottom: 20px;
+}
+
+.forgot_pwd_link a{
+  color: white;
+  text-decoration: none;
+}
+
+.forgot_pwd_link a:hover{
+  color: rgb(176, 223, 240);
+  text-decoration: none;
+}
+
+.login_logo{
+  width: 150px;
+  height: 90px;
+}
+.signup_link{
+  color: white;
+}
+.signup_link a{
+  color: white;
+}
+.signup_link a:hover{
+  color: rgb(176, 223, 240);
+  text-decoration: none;
+}
+
+.main{
+  display: flex;
+}
+
+.login_message_container{
+  text-align: center;
+  justify-content: center;
+  padding: 50px;
+}
+.login_message_container h1, h2{
+  backdrop-filter: blur(4px);  /* Applies the blur effect */
 }
