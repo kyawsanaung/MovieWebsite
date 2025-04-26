@@ -25,7 +25,7 @@
     <i class="fa-solid fa-ellipsis-vertical fa-2x"></i>
     </div>
 
-    <div class="logo"><img src="images/NavLogo.png" alt="Logo"></div>
+    <div class="logo"><a href="index.php"><img src="images/NavLogo.png" alt="Logo"></a></div>
     <ul class="nav-links">
       <button onclick="closeNav()" class="close_nav-bar"><i class="fa-solid fa-xmark"></i></button>
       <li><a href="#"><p>MOVIES</p></a></li>

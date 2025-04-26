@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
 * {
   margin: 0;
   padding: 0;
@@ -57,7 +60,7 @@ body {
 /* ===== Navbar ===== */
 .navbar {
   width: 100%;
-  z-index: 1;
+  z-index: 100;
   font-weight: bold;
   display: flex;
   justify-content: space-between;
@@ -65,6 +68,7 @@ body {
   background: linear-gradient(30deg, #1059d7, #900c3f);
   position: relative;
   border-bottom: 0.5px solid #545050;
+
 }
 
 .navbar .logo {
@@ -461,6 +465,9 @@ body {
     display: none;
   }
 
+  .infobar{
+    display: none;
+  }
 
   .toggle-icon {
     display: block;
@@ -477,8 +484,27 @@ body {
   .login_message_container{
     display: none;
   }
+
+  .thumbnail{
+    justify-content: start !important;
+  }
+
+  .arrows{
+    top: 40% !important;
+  }
+
+  .movie .content h1{
+    font-size: 35px !important;
+    letter-spacing: 2px !important;
+  
+  }
+  .movie .content h3{
+    font-size: 20px !important;
+  }
   
 }
+
+
 
 @media (min-width: 769px) {
   .accordion-content {
@@ -639,4 +665,171 @@ body {
   margin-right: 3px;  /* Adds space between the checkbox and the label */
   accent-color:  #900c3f ; /* Tomato red accent color for the checkbox */
   transform: scale(1.5);  /* Slightly enlarges the checkbox */
+}
+
+.carousel{
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  margin-top: -20px;
+}
+
+.movie{
+  position: absolute;
+  inset: 0 0 0 0;
+  overflow: hidden;
+  padding: 0;
+  opacity: 0;
+  transition: 0.5s;
+}
+.movie.active{
+  opacity: 1;
+  z-index: 10;
+}
+
+.img-poster{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.movie::after{
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-image: linear-gradient(to top, black 10%, transparent);
+}
+
+.content{
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  width: 500px;
+  max-width: 80%;
+  z-index: 1;
+}
+
+.content h1{
+  font-size: 35px;
+  text-transform: capitalize;
+  letter-spacing: 10px;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px); /* Safari support */
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+.content h3{
+  font-size: 20px;
+  margin: 5px;
+}
+
+.buttons button{
+  all: unset;
+  background-color: transparent;
+  cursor: pointer;
+  padding-right: 20px;
+  padding-left: 10px;
+}
+
+.buttons{
+  display: flex;
+  align-items: center;
+}
+
+@keyframes showContent {
+  to{
+    transform: translateY(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+.movie.active .content,
+.movie.active .content h1,
+.movie.active .content .buttons,
+.movie.active .content h3{
+  transform: translateY(30px);
+  filter: blur(20px);
+  opacity: 0;
+  animation: showContent 0.5s 0.7s ease-in-out 1 forwards;
+}
+
+.movie.active .content h1{
+  animation-delay: 1s;
+}
+.movie.active .content h3{
+  animation-delay: 1.3s;
+}
+
+.movie.active .content .buttons{
+  animation-delay: 1.5s;
+}
+
+.arrows{
+  position: absolute;
+  top: 30%;
+  right: 40px;
+  z-index: 10;
+}
+
+.arrows button{
+  background-color: #eee5;
+  border: none;
+  font-family: monospace;
+  width: 40px;
+  border-radius: 5px;
+  font-size: x-large;
+  color: white;
+  transition: .5s;
+  padding: 10px;
+}
+
+.arrows button:hover{
+  background-color: white;
+  color: black;
+}
+
+.thumbnail{
+  position: absolute;
+  bottom: 50px;
+  z-index: 11;
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  height: 250px;
+  padding: 0 50px;
+  box-sizing: border-box;
+  overflow: auto;
+  justify-content: center;
+}
+.thumbnail::-webkit-scrollbar{
+  width: 0;
+}
+
+.thumbnail .item{
+  width: 150px;
+  height: 220px;
+  filter: brightness(.5);
+  transition: .5s;
+  flex-shrink: 0;
+}
+
+.thumbnail .item img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.thumbnail .item.active{
+  filter:  brightness(1.5);
+}
+
+.thumbnail .item .movie-name{
+  position: absolute;
+  inset: auto 10px 10px 10px;
 }

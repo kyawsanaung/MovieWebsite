@@ -11,7 +11,6 @@
         /* Apply this to your main HTML file */
 
         body {
-            height: 100vh;
             background-image: url("images/Background.png");
             background-size: cover;
             /* Ensures the background covers the entire screen */

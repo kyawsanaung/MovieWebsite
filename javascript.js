@@ -101,3 +101,63 @@ function closeNav(){
   navLinks.classList.remove('active');
   closeBtn.classList.remove('active');
 }
+
+let movies = document.querySelectorAll('.movie');
+let next = document.getElementById('next');
+let prev = document.getElementById('prev');
+let thumbnail = document.querySelectorAll('.thumbnail .item');
+
+// config param
+let countItem = movies.length;
+let itemActive = 0;
+console.log('countItem');
+// event next btn
+next.onclick = function() {
+  itemActive += 1;
+  if (itemActive >= countItem) {
+    itemActive = 0;
+  }
+  showSlide();
+  
+}
+
+// event prev btn
+prev.onclick = function() {
+  itemActive -= 1;
+  if (itemActive < 0) {
+    itemActive = countItem - 1;
+  }
+  showSlide();
+  
+}
+
+// function to show slide
+function showSlide() {
+  // remove old active 
+  let movieActiveOld = document.querySelector('.movie.active');
+  let thumbnailActiveOld = document.querySelector('.thumbnail .item.active');
+  
+  if (movieActiveOld) movieActiveOld.classList.remove('active');
+  if (thumbnailActiveOld) thumbnailActiveOld.classList.remove('active');
+
+  // add active to new
+  movies[itemActive].classList.add('active');
+  thumbnail[itemActive].classList.add('active');
+
+  clearInterval(refreshInterval);
+  refreshInterval = setInterval(() => {
+    next.click();
+}, 5000);
+}
+// thumbnail click funtion
+thumbnail.forEach((thumbnail, index) => {
+  thumbnail.addEventListener('click', () =>{
+    itemActive = index;
+    showSlide();
+  })
+});
+
+// auto run
+let refreshInterval = setInterval(() => {
+    next.click();
+}, 5000);
