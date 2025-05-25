@@ -161,3 +161,115 @@ thumbnail.forEach((thumbnail, index) => {
 let refreshInterval = setInterval(() => {
     next.click();
 }, 5000);
+
+function openPopup(videoUrl) {
+  // Get the popup and iframe elements
+  const popup = document.getElementById("popup");
+  const iframe = document.getElementById("videoFrame");
+
+
+  // Check if the video URL is a YouTube URL
+  if (videoUrl.includes("youtube.com") || videoUrl.includes("youtu.be")) {
+    // Add autoplay=1 to the embed URL
+    if (!videoUrl.includes("?")) {
+      videoUrl += "?autoplay=1&mute=0&controls=0";
+    } else {
+      videoUrl += "&autoplay=1&mute=0&controls=0";
+    }
+  }
+  // Set the iframe's src to the provided video URL
+  iframe.src = videoUrl;
+
+  // Show the popup
+  popup.style.display = "flex";
+
+  // Prevent scrolling on the body (optional: add class for no-scroll functionality)
+  document.body.classList.add('no-scroll');
+}
+
+function closePopup() {
+  // Get the popup and iframe elements
+  const popup = document.getElementById("popup");
+  const iframe = document.getElementById("videoFrame");
+
+  // Stop the video by setting the iframe src to an empty string or resetting the URL
+  iframe.src = ''; // Clear the iframe to stop video playback
+
+  // Hide the popup
+  popup.style.display = "none";
+
+  // Enable scrolling again on the body
+  document.body.classList.remove('no-scroll');
+}
+
+let slideIndex = 1;
+let newsInterval;
+const slideshow = document.querySelector('.slideshow-container');
+
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
+
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+    slides[i].classList.remove("fade-in");
+  }
+
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+
+  slides[slideIndex - 1].style.display = "block";
+  slides[slideIndex - 1].classList.add("fade-in");
+  dots[slideIndex - 1].className += " active";
+
+  resetInterval();
+}
+
+function resetInterval() {
+  clearInterval(newsInterval);
+  newsInterval = setInterval(() => {
+    plusSlides(1);
+  }, 5000);
+}
+
+resetInterval();
+
+// Pause on hover
+slideshow.addEventListener('mouseenter', () => {
+  clearInterval(newsInterval);
+});
+slideshow.addEventListener('mouseleave', () => {
+  resetInterval();
+});
+
+// Swipe gestures for mobile
+let startX = 0;
+
+slideshow.addEventListener('touchstart', (e) => {
+  startX = e.touches[0].clientX;
+});
+
+slideshow.addEventListener('touchend', (e) => {
+  let endX = e.changedTouches[0].clientX;
+  let deltaX = endX - startX;
+
+  if (deltaX > 50) {
+    plusSlides(-1);
+  } else if (deltaX < -50) {
+    plusSlides(1);
+  }
+});

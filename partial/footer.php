@@ -22,8 +22,8 @@
     <div class="container">
       <h2 class="accordion-toggle">Movie <span class="toggle-icon">+</span></h2>
       <ul class="accordion-content">
-        <li><a href="#">Now Showing</a></li>
-        <li><a href="#">Coming Soon</a></li>
+        <li><a href="index.php#nowShowing">Now Showing</a></li>
+        <li><a href="index.php#upcomingMovie">Coming Soon</a></li>
         <li><a href="#">Events</a></li>
       </ul>
     </div>
